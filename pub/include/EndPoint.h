@@ -1,6 +1,6 @@
 #pragma once
 #include "PointD.h"
-class EndPoint
+class  EndPoint
 {
 public:
 	PointD sPoint;

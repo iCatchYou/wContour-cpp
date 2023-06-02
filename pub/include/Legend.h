@@ -7,7 +7,7 @@ using namespace std;
 /// <summary>
 		/// Legend parameter
 		/// </summary>
-struct  legendPara
+struct legendPara
 {
 	/// <summary>
 	/// If is vertical
@@ -38,7 +38,7 @@ struct  legendPara
 /// <summary>
 /// Legend polygon
 /// </summary>
-struct WCONTOUR_API lPolygon
+struct lPolygon
 {
 	/// <summary>
 	/// Value
@@ -55,7 +55,7 @@ struct WCONTOUR_API lPolygon
 };
 
 
-class WCONTOUR_API Legend
+class Legend
 {
 public:
 

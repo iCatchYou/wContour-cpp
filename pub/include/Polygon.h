@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-class  WPolygon
+class WPolygon
 {
 public:
 	/// <summary>

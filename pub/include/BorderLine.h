@@ -1,10 +1,11 @@
 #pragma once
+
 #include "Extent.h"
 #include "PointD.h"
 #include "IJPoint.h"
 #include <vector>
 using namespace std;
-class BorderLine
+class  BorderLine
 {
 public:
 	/// <summary>

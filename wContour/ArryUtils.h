@@ -28,11 +28,31 @@
 #include <tuple>
 #include "PointD.h"
 #include <iostream>
+
 using namespace std;
 class WCONTOUR_API ArryUtils
 {
-public:
-	
+public:	
+	template <typename T>
+	static T* create1DArray(int x, T v)
+	{
+		T* arr = new T[x];
+		for (int i = 0; i < x; i++) {
+			arr[i] = v;
+		}
+		return arr;
+	}
+	template <typename T>
+	static void delete1DArray(T* arr)
+	{
+		if (arr != NULL)
+		{
+			delete[] arr;
+			arr = NULL;
+		}
+	}
+
+	//创建三维数组
 	template <typename T>
 	static T*** create3DArray(int x, int y, int z,T v) {
 		T*** arr = new T** [x];
@@ -47,7 +67,8 @@ public:
 		}
 		return arr;
 	}
-
+	
+	//释放三维数组
 	template <typename T>
 	static void delete3DArray(T*** arr, int x, int y, int z) {
 		for (int i = 0; i < x; i++) {
@@ -59,6 +80,7 @@ public:
 		delete[] arr;
 	}
 
+	//创建二维数组
 	template <typename T>
 	static T** create2DArray(int x, int y,T v) {
 		T** arr = new T*[x];
@@ -71,6 +93,7 @@ public:
 		return arr;
 	}
 	
+	//释放二维数组
 	template <typename T>
 	static void delete2DArray(T** arr, int x, int y) {
 		if (arr != NULL)
@@ -89,19 +112,7 @@ public:
 		arr = NULL;
 	}
 	
-	/*template <typename T>
-	static int GetArrayLength(T* a)
-	{
-		return sizeof(a) / sizeof(a[0]);
-	}
-
-	template <typename T>
-	static void Get2DArryRowCol(T ** a,int &rows,int &cols)
-	{
-		rows = sizeof(a) / sizeof(a[0]);  // 行数
-		cols = sizeof(a[0]) / sizeof(a[0][0]);  // 列数
-	}*/
-
+	//克隆二维数组
 	template <typename T>
 	static T** clone2DArray(T **arr, int rows, int cols)
 	{
@@ -117,6 +128,7 @@ public:
 		return a;
 	}
 
+	//打印二维数组
 	template <typename T>
 	static void print2DArray(T** arr, int rows, int cols)
 	{

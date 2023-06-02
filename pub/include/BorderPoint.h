@@ -1,6 +1,7 @@
 #pragma once
+
 #include "PointD.h"
-class BorderPoint
+class  BorderPoint
 {
 public:
 	/// <summary>

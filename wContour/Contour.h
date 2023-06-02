@@ -99,9 +99,10 @@ public:
 	/// </summary>
 	/// <param name="pointList">point list</param>
 	/// <returns>new points</returns>
-	static vector<PointD> SmoothPoints(vector<PointD> pointList);	/// <summary>
+	static vector<PointD> SmoothPoints(vector<PointD> pointList);	
 	
-																	/// Smooth Polylines
+	/// <summary>
+	/// Smooth Polylines
 	/// </summary>
 	/// <param name="aLineList">Polyline list</param>
 	/// <returns>Polyline list after smoothing</returns>

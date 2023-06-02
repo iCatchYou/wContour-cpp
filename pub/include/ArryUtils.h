@@ -1,13 +1,57 @@
 #pragma once
+/************************************************************************************
+*  __________  _________.____														*
+*  \______   \/   _____/|    |				  wCountour  v1.0.0.0					*
+*   |     ___/\_____  \ |    |			Designed for generate contour lines			*
+*   |    |    /        \|    |___				on Windows (c++)					*
+*   |____|   /_______  /|_______ \													*
+*                    \/         \/		(C) 2020-2023. All rights reserved.			*
+*																					*
+*  @file        ArryUtils.h															*
+*  @author      YangZe(709102202@qq.com)											*
+*  @date        2023/06/01 09:14													*
+*																					*
+*  @brief       C++ Array Manipulator Class											*
+*  This file is part of wContour library.											*
+*																					*
+*  This is a dynamic library for generating contour lines, which has been rewritten *
+*  from the C # version of the wContour library.The usage methods are consistent,	*
+*  but there are slight differences.												*
+*  Github address for C# : https://github.com/meteoinfo/wContour_CSharp				*
+*  Github address for C# Demo: https://github.com/abelli85/wContourDemo_2015-1-29	*
+*																					*
+*  @version																			*
+*    - 1.0.0.0    2023/06/01 09:14    YangZe    Create file							*
+*************************************************************************************/
 #include <vector>
 #include <tuple>
 #include "PointD.h"
 #include <iostream>
+
 using namespace std;
 class ArryUtils
 {
-public:
-	
+public:	
+	template <typename T>
+	static T* create1DArray(int x, T v)
+	{
+		T* arr = new T[x];
+		for (int i = 0; i < x; i++) {
+			arr[i] = v;
+		}
+		return arr;
+	}
+	template <typename T>
+	static void delete1DArray(T* arr)
+	{
+		if (arr != NULL)
+		{
+			delete[] arr;
+			arr = NULL;
+		}
+	}
+
+	//创建三维数组
 	template <typename T>
 	static T*** create3DArray(int x, int y, int z,T v) {
 		T*** arr = new T** [x];
@@ -22,7 +66,8 @@ public:
 		}
 		return arr;
 	}
-
+	
+	//释放三维数组
 	template <typename T>
 	static void delete3DArray(T*** arr, int x, int y, int z) {
 		for (int i = 0; i < x; i++) {
@@ -34,6 +79,7 @@ public:
 		delete[] arr;
 	}
 
+	//创建二维数组
 	template <typename T>
 	static T** create2DArray(int x, int y,T v) {
 		T** arr = new T*[x];
@@ -46,6 +92,7 @@ public:
 		return arr;
 	}
 	
+	//释放二维数组
 	template <typename T>
 	static void delete2DArray(T** arr, int x, int y) {
 		if (arr != NULL)
@@ -64,19 +111,7 @@ public:
 		arr = NULL;
 	}
 	
-	/*template <typename T>
-	static int GetArrayLength(T* a)
-	{
-		return sizeof(a) / sizeof(a[0]);
-	}
-
-	template <typename T>
-	static void Get2DArryRowCol(T ** a,int &rows,int &cols)
-	{
-		rows = sizeof(a) / sizeof(a[0]);  // 行数
-		cols = sizeof(a[0]) / sizeof(a[0][0]);  // 列数
-	}*/
-
+	//克隆二维数组
 	template <typename T>
 	static T** clone2DArray(T **arr, int rows, int cols)
 	{
@@ -92,6 +127,7 @@ public:
 		return a;
 	}
 
+	//打印二维数组
 	template <typename T>
 	static void print2DArray(T** arr, int rows, int cols)
 	{

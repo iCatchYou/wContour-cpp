@@ -1,5 +1,28 @@
 #pragma once
-#include "defines.h"
+/************************************************************************************
+*  __________  _________.____														*
+*  \______   \/   _____/|    |				  wCountour  v1.0.0.0					*
+*   |     ___/\_____  \ |    |			Designed for generate contour lines			*
+*   |    |    /        \|    |___				on Windows (c++)					*
+*   |____|   /_______  /|_______ \													*
+*                    \/         \/		(C) 2020-2023. All rights reserved.			*
+*																					*
+*  @file        Contour.h															*
+*  @author      YangZe(709102202@qq.com)											*
+*  @date        2023/06/01 09:14													*
+*																					*
+*  @brief       Generate contour lines												*
+*  This file is part of wContour library.											*
+*																					*
+*  This is a dynamic library for generating contour lines, which has been rewritten *
+*  from the C # version of the wContour library.The usage methods are consistent,	*
+*  but there are slight differences.												*
+*  Github address for C# : https://github.com/meteoinfo/wContour_CSharp				*
+*  Github address for C# Demo: https://github.com/abelli85/wContourDemo_2015-1-29	*
+*																					*
+*  @version																			*
+*    - 1.0.0.0    2023/06/01 09:14    YangZe    Create file							*
+*************************************************************************************/
 #include <vector >
 #include "EndPoint.h"
 #include "PolyLine.h"
@@ -15,7 +38,7 @@
 #include <tuple>
 
 using namespace std;
-class WCONTOUR_API Contour
+class Contour
 {
 private:
 	 static vector<EndPoint> _endPointList;
@@ -75,9 +98,10 @@ public:
 	/// </summary>
 	/// <param name="pointList">point list</param>
 	/// <returns>new points</returns>
-	static vector<PointD> SmoothPoints(vector<PointD> pointList);	/// <summary>
+	static vector<PointD> SmoothPoints(vector<PointD> pointList);	
 	
-																	/// Smooth Polylines
+	/// <summary>
+	/// Smooth Polylines
 	/// </summary>
 	/// <param name="aLineList">Polyline list</param>
 	/// <returns>Polyline list after smoothing</returns>

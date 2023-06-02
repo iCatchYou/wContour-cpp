@@ -1,6 +1,6 @@
 #pragma once
 #include "PointD.h"
-class Line
+class  Line
 {
 public:
 	/// <summary>
